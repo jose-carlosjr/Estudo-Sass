@@ -1,8 +1,52 @@
-body {
-    background-color: blueviolet;
+/*VARIÁVEIS - No CSS tbm dá pra usar variáveis, porém havia uma época que não era possível. Só era possível com Sass.*/ 
+
+
+/*É POSSÍVEL IMPORTAR UM ARQUIVO SASS, QUE É MUITO ÚTIL PRA SEPARAR O CONTEÚDO DO SITE*/
+@import "./variables";
+@import "./reset"; /* NESSE ARQUIVO CONSTA TODA A ESTILIZAÇÃO BÁSICA DA PÁGINA*/
+
+/*FUNÇÕES*/
+
+@function weight($key) {
+    @return map-get($font-weight, $key)
+};
+
+@function font-family($key) {
+    @return map-get($font-family, $key)
+};
+
+/*TEMOS AS FUNÇÕES DE LIGHTEN() E DARKEN(), QUE AUXILIAM NO AJUSTE DA COR*/
+
+/* MIXIN */
+/*COM O MIXIN É POSSÍVEL ESTABELECER DIVERSAS PROPRIEDADES DENTRO DE UM BLOCO DE CÓDIGOS E CHAMAR TUDO DE UMA VEZ*/
+
+@mixin flexCenter($direction) { /*TAMBÉM PODEMOS UTILIZAR PARÂMETROS, CASO HAJA ALGUMA EXCEÇÃO*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction; /*ESSA É A EXCEÇÃO*/
+}
+
+
+
+body  {
+    background-color: lighten(#000, 10%);
     color: white;
 
-    h1 {
-        color: yellow;
+    .container {
+        @include flexCenter(column);
+        h1 {
+            color: $primary-color;
+            font-weight: weight(Medium);
+        }
+
+        p {
+            color: $secundary-color;
+            font-family: font-family(Arial);
+        }
+
+        a {
+            color: darken($primary-color, 20%);
+        }
     }
 }
