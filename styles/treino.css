@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/*VARIÁVEIS - No CSS tbm dá pra usar variáveis, porém havia uma época que não era possível. Só era possível com Sass.*/
+/*É POSSÍVEL IMPORTAR UM ARQUIVO SASS, QUE É MUITO ÚTIL PRA SEPARAR O CONTEÚDO DO SITE*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+button, [type=submit] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+p {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* NESSE ARQUIVO CONSTA TODA A ESTILIZAÇÃO BÁSICA DA PÁGINA*/
+/*FUNÇÕES*/
+/*TEMOS AS FUNÇÕES DE LIGHTEN() E DARKEN(), QUE AUXILIAM NO AJUSTE DA COR*/
+/* MIXIN */
+/*COM O MIXIN É POSSÍVEL ESTABELECER DIVERSAS PROPRIEDADES DENTRO DE UM BLOCO DE CÓDIGOS E CHAMAR TUDO DE UMA VEZ*/
+body {
+  background-color: #1a1a1a;
+  color: white;
+}
+body .container {
+  /*TAMBÉM PODEMOS UTILIZAR PARÂMETROS, CASO HAJA ALGUMA EXCEÇÃO*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /*ESSA É A EXCEÇÃO*/
+}
+body .container h1 {
+  color: yellow;
+  font-weight: 500;
+}
+body .container p {
+  color: blue;
+  font-family: Arial;
+}
+body .container a {
+  color: #999900;
+}/*# sourceMappingURL=treino.css.map */

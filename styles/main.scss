@@ -1,52 +1,43 @@
-/*VARIÁVEIS - No CSS tbm dá pra usar variáveis, porém havia uma época que não era possível. Só era possível com Sass.*/ 
-
-
-/*É POSSÍVEL IMPORTAR UM ARQUIVO SASS, QUE É MUITO ÚTIL PRA SEPARAR O CONTEÚDO DO SITE*/
+@import "./reset";
 @import "./variables";
-@import "./reset"; /* NESSE ARQUIVO CONSTA TODA A ESTILIZAÇÃO BÁSICA DA PÁGINA*/
+@import "./mixins";
 
-/*FUNÇÕES*/
-
-@function weight($key) {
-    @return map-get($font-weight, $key)
-};
-
-@function font-family($key) {
-    @return map-get($font-family, $key)
-};
-
-/*TEMOS AS FUNÇÕES DE LIGHTEN() E DARKEN(), QUE AUXILIAM NO AJUSTE DA COR*/
-
-/* MIXIN */
-/*COM O MIXIN É POSSÍVEL ESTABELECER DIVERSAS PROPRIEDADES DENTRO DE UM BLOCO DE CÓDIGOS E CHAMAR TUDO DE UMA VEZ*/
-
-@mixin flexCenter($direction) { /*TAMBÉM PODEMOS UTILIZAR PARÂMETROS, CASO HAJA ALGUMA EXCEÇÃO*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $direction; /*ESSA É A EXCEÇÃO*/
-}
-
-
-
-body  {
-    background-color: lighten(#000, 10%);
-    color: white;
+section {
+    border: 10px solid black;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    @include flexCenter();
 
     .container {
-        @include flexCenter(column);
+        border: 2px solid black;
+        width: 80%;
+
         h1 {
-            color: $primary-color;
+            width: 100%;
+            font-size: 2.4rem;
+            text-align: left;
+            padding: 24px 0;
             font-weight: weight(Medium);
         }
 
         p {
-            color: $secundary-color;
-            font-family: font-family(Arial);
+            line-height: 1.5rem;
         }
 
-        a {
-            color: darken($primary-color, 20%);
+        .actions {
+            @include flexCenter(row);
+            margin-top: 40px;
+
+            .btn {
+                margin: 0 auto;
+                padding: 8px;
+                border-radius: 8px;
+                font-size: 1.5rem;
+                text-decoration: none;
+                color: inherit;
+                font-weight: weight(Medium);
+            }
         }
     }
 }

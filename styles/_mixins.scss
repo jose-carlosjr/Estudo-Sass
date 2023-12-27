@@ -1,0 +1,11 @@
+@mixin flexCenter($direction: column) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+/*FUNÇÃO QUE CHAMA A VARIÁVEL CRIADA NO ARQUIVO _variables.scss QUE PERSONALIZA O font-weight*/
+@function weight($weight-name) {
+    @return map-get($font-weight, $weight-name)
+}
