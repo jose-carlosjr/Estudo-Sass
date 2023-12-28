@@ -5,6 +5,11 @@
     flex-direction: $direction;
 }
 
+@mixin theme($bg, $color) {
+    background-color: $bg;
+    color: $color;
+}
+
 /*FUNÇÃO QUE CHAMA A VARIÁVEL CRIADA NO ARQUIVO _variables.scss QUE PERSONALIZA O font-weight*/
 @function weight($weight-name) {
     @return map-get($font-weight, $weight-name)

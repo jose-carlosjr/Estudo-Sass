@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*VARIÁVEIS - No CSS tbm dá pra usar variáveis, porém havia uma época que não era possível. Só era possível com Sass.*/
 /*É POSSÍVEL IMPORTAR UM ARQUIVO SASS, QUE É MUITO ÚTIL PRA SEPARAR O CONTEÚDO DO SITE*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 html,
 body {
   margin: 0;
