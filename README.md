@@ -1,2 +1,2 @@
-# Projeto-Sass
- Aprendendo Sass
+# Aprendendo Sass
+ Conhecendo *Sass* e colocando em prática!
