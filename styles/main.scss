@@ -9,26 +9,36 @@ section {
     font-family: "Roboto", sans-serif;
     @include flexCenter();
 
-    
+    @media screen and (max-width: $mobile-max-width) {
+        height: auto;
+    }
 
     &.nodejs {
         @include theme(#7db741, #3c3e34)
     }
 
     .container {
-        border: 2px solid black;
-        width: 80%;
+        width: 90%;
+
+        @media screen and (max-width: $mobile-max-width) {
+            width: calc(100% - 100px);
+            padding: 50px 0 50px;
+        }
 
         h1 {
             width: 100%;
             font-size: 2.4rem;
-            text-align: left;
+            text-align: center;
             padding: 24px 0;
             font-weight: weight(Medium);
         }
 
         p {
             line-height: 1.5rem;
+            
+            @media screen and (max-width: $mobile-max-width) {
+                text-align: justify;
+            }
         }
 
         .actions {
@@ -37,7 +47,7 @@ section {
 
             .btn {
                 margin: 0 auto;
-                padding: 8px;
+                padding: 0px;
                 border-radius: 8px;
                 font-size: 1.5rem;
                 text-decoration: none;
@@ -61,11 +71,9 @@ section {
         @include theme(#00c0dc, #fff);
 
         .actions {
-            .btn {
-                &:hover {
+            .btn:hover {
                     color: #3c3e34;
                 }
-            }
         }
     }
 }
